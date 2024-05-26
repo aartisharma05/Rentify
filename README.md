@@ -88,7 +88,22 @@ GET /api/properties
 Delete Property
 
 DELETE /api/properties/:id
-Screenshots
+
+
+
+# ScreenShots
+
+![image](https://github.com/aartisharma05/Rentify/assets/120464099/f013561b-72c0-49d5-a430-53307450d7f0)
+
+![image](https://github.com/aartisharma05/Rentify/assets/120464099/9300856d-d4fb-4185-9023-c96288a01fe6)
+
+![image](https://github.com/aartisharma05/Rentify/assets/120464099/24b060ae-5065-4d56-bfca-76f0c7f0d1ec)
+
+![image](https://github.com/aartisharma05/Rentify/assets/120464099/fd337abd-074d-45bd-8745-5156a46848b7)
+
+
+
+
 
 
 
