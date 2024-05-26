@@ -1,30 +1,33 @@
-// client/src/App.js
-import React, { useState, useEffect } from "react";
-import axios from "axios";
+import { useEffect, useState } from "react";
 
 const App = () => {
   const [properties, setProperties] = useState([]);
 
-  useEffect(() => {
-    const fetchProperties = async () => {
-      try {
-        const res = await axios.get("/api/properties");
-        setProperties(res.data);
-      } catch (err) {
-        console.error(err);
+  const getData = async () => {
+    try {
+      const response = await fetch("http://localhost:5000/api/properties");
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
       }
-    };
+      const data = await response.json();
+      console.log(data);
+      setProperties(data); // setProperties with the parsed data
+    } catch (error) {
+      console.error("There was an error fetching the properties!", error);
+    }
+  };
 
-    fetchProperties();
+  useEffect(() => {
+    getData();
   }, []);
 
   return (
     <div>
-      <h1>Rentify - Where Renting Meets Simplicity</h1>
+      <h1>Properties</h1>
       <ul>
         {properties.map((property) => (
-          <li key={property._id}>
-            {property.address} - ${property.rent}
+          <li key={property.id}>
+            {property.name} - {property.location}
           </li>
         ))}
       </ul>
