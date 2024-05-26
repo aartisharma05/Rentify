@@ -1,27 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-
-const PropertyList = ({ properties, onDelete }) => {
-  return (
-    <div>
-      <h2>Property List</h2>
-      <ul>
-        {properties.map((property) => (
-          <li key={property.id}>
-            <div>
-              <img src={property.propertyImg} alt="Property" />
-            </div>
-            <div>Area: {property.area}</div>
-            <div>Bedrooms: {property.bedrooms}</div>
-            <div>Bathrooms: {property.bathrooms}</div>
-            <div>POI: {property.poi}</div>
-            <button onClick={() => onDelete(property.id)}>Delete</button>
-          </li>
-        ))}
-      </ul>
-    </div>
-  );
-};
+import SellerCard from "./SellerCard";
 
 const AddPropertyForm = ({ onAdd }) => {
   const [formData, setFormData] = useState({
@@ -55,7 +34,10 @@ const AddPropertyForm = ({ onAdd }) => {
       {showModal && (
         <div className="modal">
           <div className="modal-content container border-2 border-red-600 shadow-red-400 rounded-lg ">
-            <span className="close left-0" onClick={() => setShowModal(false)}>
+            <span
+              className="close cursor-pointer"
+              onClick={() => setShowModal(false)}
+            >
               &times;
             </span>
             <form
@@ -162,9 +144,11 @@ const SellerDashboard = () => {
 
   return (
     <div>
-      <h1>Seller Dashboard</h1>
+      <h1 className="border-2 border-dotted border-red-600 p-2 m-2 rounded-lg text-center font-bold text-4xl">
+        Seller Dashboard
+      </h1>
       <AddPropertyForm onAdd={handleAddProperty} />
-      <PropertyList properties={properties} onDelete={handleDeleteProperty} />
+      <SellerCard />
     </div>
   );
 };
