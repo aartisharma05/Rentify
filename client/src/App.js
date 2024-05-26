@@ -1,37 +1,17 @@
-import { useEffect, useState } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import LandingPage from "./components/LandingPage";
+import SellerDashboard from "./components/SellerDashboard";
+import UserDashboard from "./components/UserDashboard";
 
 const App = () => {
-  const [properties, setProperties] = useState([]);
-
-  const getData = async () => {
-    try {
-      const response = await fetch("http://localhost:5000/api/properties");
-      if (!response.ok) {
-        throw new Error(`HTTP error! Status: ${response.status}`);
-      }
-      const data = await response.json();
-      console.log(data);
-      setProperties(data); // setProperties with the parsed data
-    } catch (error) {
-      console.error("There was an error fetching the properties!", error);
-    }
-  };
-
-  useEffect(() => {
-    getData();
-  }, []);
-
   return (
-    <div>
-      <h1>Properties</h1>
-      <ul>
-        {properties.map((property) => (
-          <li key={property.id}>
-            {property.name} - {property.location}
-          </li>
-        ))}
-      </ul>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<LandingPage />} />
+        <Route path="/user-dashboard" element={<UserDashboard />} />
+        <Route path="/seller-dashboard" element={<SellerDashboard />} />
+      </Routes>
+    </Router>
   );
 };
 

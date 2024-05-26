@@ -21,20 +21,8 @@ if (!MONGO_URI) {
 // Middleware
 app.use(express.json());
 app.use(cors());
-app.get("/", (req, res) => {
-  res.send("API is running...");
-});
-app.use("/api/users", userRoutes);
-// app.use("/api/properties", propertyRoutes);
-app.get("/api/properties", (req, res) => {
-  // Here you would typically fetch data from a database
-  const properties = [
-    { id: 1, name: "Property 1", location: "Location 1" },
-    { id: 2, name: "Property 2", location: "Location 2" },
-    // Add more properties as needed
-  ];
-  res.json(properties);
-});
+app.use("/users", userRoutes);
+app.use("/properties", propertyRoutes);
 
 // MongoDB Connection
 mongoose
@@ -44,6 +32,7 @@ mongoose
 
 // Sample Route
 app.get("/", (req, res) => {
+  console.log("Root route accessed");
   res.send("API is running...");
 });
 

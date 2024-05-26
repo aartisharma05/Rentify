@@ -5,13 +5,22 @@ const Property = require("../models/Property");
 
 // List Property
 router.post("/", async (req, res) => {
-  const { owner, address, city, description, rent } = req.body;
+  console.log(req);
+  const { propertyImg, area, bedrooms, bathrooms, poi } = req.body;
 
   try {
-    const property = new Property({ owner, address, city, description, rent });
+    const property = new Property({
+      propertyImg,
+      area,
+      bedrooms,
+      bathrooms,
+      poi,
+    });
+
     await property.save();
     res.status(201).json({ msg: "Property listed successfully" });
   } catch (err) {
+    console.error(err);
     res.status(500).json({ msg: "Server error" });
   }
 });
@@ -22,6 +31,7 @@ router.get("/", async (req, res) => {
     const properties = await Property.find();
     res.status(200).json(properties);
   } catch (err) {
+    console.error(err);
     res.status(500).json({ msg: "Server error" });
   }
 });
