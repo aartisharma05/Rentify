@@ -101,6 +101,6 @@ This project is licensed under the MIT License.
 Contact
 For any questions or support, please contact:
 
-Name: Your Name
-Email: your.email@example.com
-GitHub: yourusername
+Name: Aarti Sharma
+Email: aartisharma.official1@gmail.com
+GitHub: aartisharma05
