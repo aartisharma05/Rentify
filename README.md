@@ -105,17 +105,9 @@ DELETE /api/properties/:id
 
 
 
-
-
-Contributing
-Contributions are welcome! Please fork the repository and submit a pull request for any improvements or bug fixes.
-
-License
-This project is licensed under the MIT License.
-
 Contact
 For any questions or support, please contact:
 
-Name: Aarti Sharma
-Email: aartisharma.official1@gmail.com
-GitHub: aartisharma05
+ - Name: Aarti Sharma
+ - Email: aartisharma.official1@gmail.com
+ - GitHub: aartisharma05
