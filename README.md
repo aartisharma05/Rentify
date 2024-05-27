@@ -20,24 +20,21 @@ Rentify is a web application designed to streamline the rental process for both 
    
 # Getting Started
  - Prerequisites
-  - Node.js
-  - npm (Node Package Manager)
-  - MongoDB (local or Atlas)
-  - Installation
- - Clone the repository
-
-bash
-Copy code
-git clone https://github.com/yourusername/rentify.git
-cd rentify
-Backend Setup
-
-Navigate to the server directory:
-
-bash
-Copy code
-cd server
-Create a .env file and add your MongoDB URI:
+   - Node.js
+   - npm (Node Package Manager)
+   - MongoDB (local or Atlas)
+ - Installation
+   - Clone the repository
+   - bash
+   - Copy code
+     - git clone https://github.com/yourusername/rentify.git
+     - cd rentify
+   - Backend Setup
+     - Navigate to the server directory:
+       - bash
+         - Copy code
+         - cd server
+         - Create a .env file and add your MongoDB URI:
 
 makefile
 Copy code
