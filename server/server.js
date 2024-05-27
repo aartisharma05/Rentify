@@ -20,7 +20,13 @@ if (!MONGO_URI) {
 }
 // Middleware
 app.use(express.json());
-app.use(cors());
+app.use(
+  cors({
+    origin: ["https://rentify-bay.vercel.app/"],
+    method: ["POST", "GET", "PUT", "DELETE"],
+    credentials: true,
+  })
+);
 app.use("/users", userRoutes);
 app.use("/properties", propertyRoutes);
 
