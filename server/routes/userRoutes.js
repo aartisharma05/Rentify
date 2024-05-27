@@ -6,7 +6,7 @@ const bcrypt = require("bcryptjs");
 
 // Register User
 router.post("/register", async (req, res) => {
-  const { fname, lname, email, pno, userType } = req.body;
+  const { fname, lname, email, password, pno, userType } = req.body;
 
   try {
     let user = await User.findOne({ email });
@@ -14,14 +14,15 @@ router.post("/register", async (req, res) => {
       return res.status(400).json({ msg: "User already exists" });
     }
 
-    user = new User({ fname, lname, email, pno, userType });
+    user = new User({ fname, lname, email, password, pno, userType });
 
-    // const salt = await bcrypt.genSalt(10);
-    // user.password = await bcrypt.hash(password, salt);
+    const salt = await bcrypt.genSalt(10);
+    user.password = await bcrypt.hash(password, salt);
 
     await user.save();
     res.status(201).json({ msg: "User registered successfully" });
   } catch (err) {
+    console.log("Error: ", err);
     res.status(500).json({ msg: "Server error" });
   }
 });
