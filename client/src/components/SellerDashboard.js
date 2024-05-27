@@ -26,7 +26,7 @@ const AddPropertyForm = ({ onAdd }) => {
   return (
     <div>
       <button
-        className="text-white bg-red-700 rounded-lg m-2 p-2"
+        className="text-white bg-red-700 rounded-lg m-2 p-2 float-right"
         onClick={() => setShowModal(true)}
       >
         Add Property
@@ -142,13 +142,31 @@ const SellerDashboard = () => {
     }
   };
 
+  const handleUpdateProperty = async (propertyId, updatedData) => {
+    try {
+      await axios.put(
+        `http://localhost:5000/properties/${propertyId}`,
+        updatedData
+      );
+      fetchProperties();
+    } catch (error) {
+      console.error("Error updating property:", error);
+    }
+  };
+
   return (
     <div>
       <h1 className="border-2 border-dotted border-red-600 p-2 m-2 rounded-lg text-center font-bold text-4xl">
         Seller Dashboard
       </h1>
       <AddPropertyForm onAdd={handleAddProperty} />
-      <SellerCard />
+      <span className="flex flex-col items-start justify-center">
+        <SellerCard
+          properties={properties}
+          onDelete={handleDeleteProperty}
+          onUpdate={handleUpdateProperty}
+        />
+      </span>
     </div>
   );
 };

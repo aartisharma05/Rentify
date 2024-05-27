@@ -30,12 +30,6 @@ mongoose
   .then(() => console.log("MongoDB connected"))
   .catch((err) => console.log(err));
 
-// Sample Route
-app.get("/", (req, res) => {
-  console.log("Root route accessed");
-  res.send("API is running...");
-});
-
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
