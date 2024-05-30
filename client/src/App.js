@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import LandingPage from "./components/LandingPage";
-import SellerDashboard from "./components/SellerDashboard";
-import UserDashboard from "./components/UserDashboard";
+import SellerDashboard from "./components/Seller/SellerDashboard";
+import UserDashboard from "./components/User/UserDashboard";
 
 const App = () => {
   return (
