@@ -36,67 +36,71 @@ Rentify is a web application designed to streamline the rental process for both 
          - cd server
          - Create a .env file and add your MongoDB URI:
 
-makefile
-Copy code
-MONGO_URI=your_mongodb_uri
-Install server dependencies:
+- makefile
+  - Copy code
+  - MONGO_URI=your_mongodb_uri
+    
+# Install server dependencies:
 
-bash
-Copy code
-npm install
-Start the server:
+- bash
+  - Copy code
+  - npm install
+  - Start the server:
 
-bash
-Copy code
-npm run dev
-Frontend Setup
+- bash
+  - Copy code
+  - npm run dev
+  - Frontend Setup
 
-Navigate to the client directory:
+- Navigate to the client directory:
 
-bash
-Copy code
-cd ../client
-Install client dependencies:
+    - bash
+    - Copy code
+    - cd ../client
+    - Install client dependencies:
 
-bash
-Copy code
-npm install
-Start the frontend development server:
+  - bash
+    - Copy code
+    - npm install
+    - Start the frontend development server:
 
-bash
-Copy code
-npm start
-Access the application
+- bash
+  - Copy code
+  - npm start
+  - Access the application
 
 Open your web browser and navigate to http://localhost:3000.
-Usage
-Login as a Seller or User: On the landing page, select your user type (Seller or User) and log in.
-Seller Dashboard: If logged in as a Seller, you can add new properties, view your listed properties, and delete them if needed.
-User Dashboard: If logged in as a User, you can browse through the list of properties and view details for each property.
-API Endpoints
-Property Routes
-List Property
-
-POST /api/properties
-Request Body: { propertyImg, area, bedrooms, bathrooms, poi }
-Get Properties
-
-GET /api/properties
-Delete Property
-
-DELETE /api/properties/:id
+- Usage
+  - Login as a Seller or User: On the landing page, select your user type (Seller or User) and log in.
+  - Seller Dashboard: If logged in as a Seller, you can add new properties, view your listed properties, and delete them if needed.
+  - User Dashboard: If logged in as a User, you can browse through the list of properties and view details for each property.
+  - API Endpoints
+    - Property Routes
+    - List Property
+ 
+  - POST /api/properties
+    - Request Body: { propertyImg, area, bedrooms, bathrooms, poi }
+  - Get Properties
+      - GET /api/properties
+  - Delete Property
+    - DELETE /api/properties/:id
 
 
 
 # ScreenShots
+![image](https://github.com/aartisharma05/Rentify/assets/120464099/fa78be77-2b6b-43fe-958f-d64227280c10)
+![image](https://github.com/aartisharma05/Rentify/assets/120464099/915254c5-3271-4658-9b48-61aea06497f8)
+![image](https://github.com/aartisharma05/Rentify/assets/120464099/b3e4d9dc-6920-43b1-b630-789b8f6b8247)
+![image](https://github.com/aartisharma05/Rentify/assets/120464099/43c5fd2f-8b30-47b1-b5ad-6f61a068f11a)
+![image](https://github.com/aartisharma05/Rentify/assets/120464099/91a8307e-00fd-4c33-a6c6-4fa0ea4df2d2)
+![image](https://github.com/aartisharma05/Rentify/assets/120464099/346e07b8-a2c3-441b-aceb-c67d8aa2c310)
+![image](https://github.com/aartisharma05/Rentify/assets/120464099/02e30382-f278-41e9-878f-e47b1a48718a)
+![image](https://github.com/aartisharma05/Rentify/assets/120464099/375b34a3-8134-4606-b0c7-06029905fbf3)
+![image](https://github.com/aartisharma05/Rentify/assets/120464099/0bc699a0-f713-4611-98da-77b0c54b3b3e)
+![image](https://github.com/aartisharma05/Rentify/assets/120464099/1d9c2413-4c86-40a9-b998-ceb823d9e668)
+![image](https://github.com/aartisharma05/Rentify/assets/120464099/9d5efbc8-dbc8-438d-b9fc-7f43a735b2fd)
 
-![image](https://github.com/aartisharma05/Rentify/assets/120464099/f013561b-72c0-49d5-a430-53307450d7f0)
 
-![image](https://github.com/aartisharma05/Rentify/assets/120464099/9300856d-d4fb-4185-9023-c96288a01fe6)
-
-![image](https://github.com/aartisharma05/Rentify/assets/120464099/24b060ae-5065-4d56-bfca-76f0c7f0d1ec)
-
-![image](https://github.com/aartisharma05/Rentify/assets/120464099/fd337abd-074d-45bd-8745-5156a46848b7)
 
 
 
