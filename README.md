@@ -10,7 +10,7 @@ Rentify is a web application designed to streamline the rental process for both 
  - Property Browsing: Tenants can browse through available properties, view detailed information, and contact property owners.
  - User Roles: Supports different user roles (Seller and User) to provide a tailored experience for property owners and tenants.
  - Responsive Design: User-friendly interface that works on both desktop and mobile devices.
- - 
+ 
 # Tech Stack
  - Frontend: React.js, Formik, Tailwind CSS
  - Backend: Node.js, Express.js, Mongoose
@@ -98,7 +98,8 @@ Open your web browser and navigate to http://localhost:3000.
 ![image](https://github.com/aartisharma05/Rentify/assets/120464099/375b34a3-8134-4606-b0c7-06029905fbf3)
 ![image](https://github.com/aartisharma05/Rentify/assets/120464099/0bc699a0-f713-4611-98da-77b0c54b3b3e)
 ![image](https://github.com/aartisharma05/Rentify/assets/120464099/1d9c2413-4c86-40a9-b998-ceb823d9e668)
-![image](https://github.com/aartisharma05/Rentify/assets/120464099/9d5efbc8-dbc8-438d-b9fc-7f43a735b2fd)
+![image](https://github.com/aartisharma05/Rentify/assets/120464099/47399d18-d1fe-4d8e-8933-0d29b01f25fa)
+
 
 
 
