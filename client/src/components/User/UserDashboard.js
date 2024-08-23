@@ -37,18 +37,26 @@ const UserDashboard = () => {
       </h1>
       <div className="border-2 border-gray-600 rounded-lg p-2 m-2">
         <span className="flex justify-between items-center">
-          <input type="search" placeholder="Area" className="w-3/4 p-1 m-1" />
+          <input
+            type="search"
+            placeholder="Area"
+            className="w-3/4 p-1 m-1 rounded-lg border-2 border-gray-400"
+          />
           <input
             type="search"
             placeholder="Bedrooms"
-            className="w-3/4 p-1 m-1"
+            className="w-3/4 p-1 m-1 rounded-lg border-2 border-gray-400"
           />
           <input
             type="search"
             placeholder="Bathrooms"
-            className="w-3/4 p-1 m-1"
+            className="w-3/4 p-1 m-1 rounded-lg border-2 border-gray-400"
           />
-          <input type="search" placeholder="Poi" className="w-3/4 p-1 m-1" />
+          <input
+            type="search"
+            placeholder="Poi"
+            className="w-3/4 p-1 m-1 rounded-lg border-2 border-gray-400"
+          />
           <button className="bg-purple-600 p-2 m-2 rounded-lg">Search</button>
         </span>
       </div>
