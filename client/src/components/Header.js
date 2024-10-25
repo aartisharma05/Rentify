@@ -1,15 +1,14 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
+import { LocationContext } from "./LocationProvider";
 
 function Header() {
   const [location, setLocation] = useState("");
+  const { latitude, longitude } = useContext(LocationContext);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    navigator.geolocation.getCurrentPosition((position) => {
-      const p = position.coords;
-      console.log("coordinates ", p.latitude, p.longitude);
-      getAddress(p.latitude, p.longitude);
-      console.log("here");
-    });
+    getAddress(latitude, longitude);
+    setIsLoading(false);
   }, []);
 
   const getAddress = async (latitude, longitude) => {
@@ -17,6 +16,7 @@ function Header() {
 
     const response = await fetch(url);
     const data = await response.json();
+    console.log("in header1", typeof latitude);
     try {
       if (data) {
         const address = data.address.county;
@@ -31,14 +31,31 @@ function Header() {
   };
   console.log("location :" + location);
 
+  if (isLoading) {
+    return (
+      <>
+        <div className="bg-red-600 border-2 shadow-lg rounded-lg p-2 sticky top-0">
+          <span>
+            <small className="font-bold text-3xl text-left p-4 text-white">
+              RENTIFY
+            </small>
+            <p>Loading...</p>
+          </span>
+        </div>
+      </>
+    );
+  }
+
   return (
     <>
-      <div className="bg-red-600 border-2 shadow-lg rounded-lg p-2">
+      <div className="bg-red-600 border-2 shadow-lg rounded-lg p-2 sticky top-0">
         <span>
           <small className="font-bold text-3xl text-left p-4 text-white">
             RENTIFY
           </small>
-          <small className=" text-lg text-white"> {location}</small>
+          {!isLoading && (
+            <small className=" text-lg text-white"> {location}</small>
+          )}
         </span>
       </div>
     </>
